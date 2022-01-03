@@ -10,6 +10,8 @@ interface Transaction {
   createdAt: string;
 }
 
+// Formas de implementar:
+// Opção 1:
 // interface CreateTransaction {
 //   title: string;
 //   amount: number;
@@ -17,8 +19,10 @@ interface Transaction {
 //   category: string;
 // }
 
+// Opção 2:
 // type CreateTransaction = Pick<Transaction, 'title' | 'amount' | 'type' | 'category'>;
 
+// Opção 3:
 type CreateTransaction = Omit<Transaction, 'id' | 'createdAt'>;
 
 interface TransactionsProviderProps {
